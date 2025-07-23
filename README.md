@@ -44,3 +44,9 @@ pip install -r requirements.txt
 ```
 ### 2. Получи API-ключ Gemini: 
 <https://ai.google.dev/>
+
+### 3. Установи ключ:
+```
+export GOOGLE_API_KEY="твой_ключ"
+```
+(или используй ```.env```)

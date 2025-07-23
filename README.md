@@ -50,3 +50,11 @@ pip install -r requirements.txt
 export GOOGLE_API_KEY="твой_ключ"
 ```
 (или используй ```.env```)
+
+### 4. Запусти приложение:
+```
+python app.py
+```
+
+### 5. Открой в браузере:
+<http://127.0.0.1:5000/>

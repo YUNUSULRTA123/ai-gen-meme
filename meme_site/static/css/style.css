@@ -1,53 +1,143 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background: #222;
-  color: #eee;
-  text-align: center;
-  padding: 30px;
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
 }
 
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  background: #333;
-  padding: 20px;
-  border-radius: 10px;
+body {
+    background: #121212;
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 20px;
 }
 
 h1 {
-  margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #ffa500;
+    text-shadow: 0 0 8px #ffb347;
+    text-align: center;
 }
 
 form {
-  margin-bottom: 20px;
+    background: #1e1e1e;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(255, 165, 0, 0.4);
+    width: 100%;
+    max-width: 480px;
+    margin-bottom: 30px;
 }
 
-input[type="text"], select {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    color: #ffa500;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: none;
+    background: #2a2a2a;
+    color: #eee;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background: #3b3b3b;
+    outline: none;
+    box-shadow: 0 0 8px #ffb347;
 }
 
 button {
-  background: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
+    margin-top: 15px;
+    width: 100%;
+    padding: 14px;
+    background: #ffa500;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #121212;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background: #45a049;
+    background: #ffb347;
 }
 
-.meme-image {
-  max-width: 100%;
-  border: 3px solid white;
-  border-radius: 10px;
-  margin-top: 15px;
+.meme-container {
+    max-width: 480px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+.meme-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(255, 165, 0, 0.5);
+    user-select: none;
+}
+
+.logo {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 50px;
+    height: 50px;
+    opacity: 0.85;
+    pointer-events: none;
+    filter: drop-shadow(0 0 3px #ffa500);
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #888;
+    text-align: center;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 600px) {
+    body {
+        padding: 20px 15px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    form {
+        padding: 20px;
+    }
+    
+    button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+        top: 10px;
+        left: 10px;
+    }
 }

@@ -66,7 +66,9 @@ python app.py
 
 ## 📦 Зависимости
 -**Flask**
+
 -**Pillow**
+
 -**google-generativeai**
 
 ## 📄 Лицензия

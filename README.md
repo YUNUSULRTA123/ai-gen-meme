@@ -24,12 +24,23 @@ meme_site/
 │ │ └── style.css
 │ ├── img/
 │ │ └── trollface.svg
-│ └── memes/ # Картинки-мемы
+│ └── memes/ 
 ├── templates/
 │ └── index.html
-├── ai_text_gen.py # Генерация текста через Gemini
-├── meme_generator.py # Создание изображения
-├── app.py # Flask-приложение
+├── ai_text_gen.py 
+├── meme_generator.py 
+├── app.py 
 ├── requirements.txt
 └── README.md
 ```
+
+---
+## ⚙️ Установка
+
+### 1. Установи зависимости:
+
+```
+pip install -r requirements.txt
+```
+### 2. Получи API-ключ Gemini: 
+<https://ai.google.dev/>

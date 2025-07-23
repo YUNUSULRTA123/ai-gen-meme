@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Мем Генератор</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <img src="{{ url_for('static', filename='img/trollface.svg') }}" alt="Trollface Logo" class="logo" />
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 AI + Ручной Генератор Мемов</h1>
+
+    <form method="POST">
+      <label>Выберите шаблон:</label>
+      <select name="template" required>
+        {% for meme in memes %}
+          <option value="{{ meme }}">{{ meme }}</option>
+        {% endfor %}
+      </select>
+
+      <div>
+        <input type="radio" id="manual" name="mode" value="manual" checked />
+        <label for="manual">Ручной ввод текста</label>
+
+        <input type="radio" id="ai" name="mode" value="ai" />
+        <label for="ai">Генерация AI по теме</label>
+      </div>
+
+      <div id="manual_inputs">
+        <input type="text" name="top_text" placeholder="Верхний текст" />
+        <input type="text" name="bottom_text" placeholder="Нижний текст" />
+      </div>
+
+      <div id="ai_input" style="display:none;">
+        <input type="text" name="topic" placeholder="Тема для AI" />
+      </div>
+
+      <button type="submit">Сгенерировать мем</button>
+    </form>
+
+    {% if generated_meme %}
+      <h2>Результат:</h2>
+      <img src="{{ url_for('static', filename=generated_meme.split('static/')[-1]) }}" alt="Generated meme" class="meme-image" />
+      <br/>
+      <a href="{{ url_for('download_file', filename=generated_meme.split('/')[-1]) }}">Скачать мем</a>
+    {% endif %}
+  </div>
+
+  <script>
+    // Показывать/скрывать поля формы в зависимости от режима
+    const manualRadio = document.getElementById('manual');
+    const aiRadio = document.getElementById('ai');
+    const manualInputs = document.getElementById('manual_inputs');
+    const aiInput = document.getElementById('ai_input');
+
+    function toggleInputs() {
+      if (manualRadio.checked) {
+        manualInputs.style.display = 'block';
+        aiInput.style.display = 'none';
+      } else {
+        manualInputs.style.display = 'none';
+        aiInput.style.display = 'block';
+      }
+    }
+
+    manualRadio.addEventListener('change', toggleInputs);
+    aiRadio.addEventListener('change', toggleInputs);
+    window.onload = toggleInputs;
+  </script>
+</body>
+</html>
